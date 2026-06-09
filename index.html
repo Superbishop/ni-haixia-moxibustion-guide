@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>倪海厦·艾灸与隔姜灸 — 穴位图解与使用指南</title>
+<style>
+  :root {
+    --bronze: #B87333;
+    --bronze-dark: #8B5E3C;
+    --bronze-light: #D4A76A;
+    --bronze-glow: #E8C88A;
+    --red-accent: #C0392B;
+    --bg: #1a1a2e;
+    --bg2: #16213e;
+    --card: #1f2b47;
+    --text: #e8e8e8;
+    --text2: #b0b0c0;
+    --gold: #d4a76a;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family: "Noto Serif SC", "Source Han Serif CN", "SimSun", serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.8;
+  }
+  .hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #2a1a0e 50%, #1a1a2e 100%);
+    padding: 60px 20px 40px;
+    text-align: center;
+    border-bottom: 2px solid var(--bronze);
+  }
+  .hero h1 {
+    font-size: 2.4em;
+    color: var(--bronze-glow);
+    text-shadow: 0 0 20px rgba(184,115,51,0.3);
+    margin-bottom: 10px;
+  }
+  .hero .sub {
+    font-size: 1.1em;
+    color: var(--text2);
+    letter-spacing: 4px;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+  }
+  .section {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 30px 35px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(184,115,51,0.2);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  }
+  .section h2 {
+    color: var(--bronze-glow);
+    font-size: 1.6em;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(184,115,51,0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section h2::before {
+    content: "◆";
+    color: var(--bronze);
+    font-size: 0.7em;
+  }
+  .section h3 {
+    color: var(--bronze-light);
+    font-size: 1.2em;
+    margin: 18px 0 10px;
+  }
+  .section p, .section li {
+    color: var(--text2);
+    font-size: 0.95em;
+  }
+  .section ul, .section ol {
+    padding-left: 20px;
+    margin: 10px 0;
+  }
+  .section li {
+    margin-bottom: 6px;
+  }
+  .highlight {
+    color: var(--bronze-glow);
+    font-weight: bold;
+  }
+  .quote-box {
+    background: rgba(184,115,51,0.08);
+    border-left: 3px solid var(--bronze);
+    padding: 15px 20px;
+    margin: 15px 0;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: var(--bronze-light);
+  }
+
+  /* 铜人图区域 */
+  .bronze-figures {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin: 20px 0;
+  }
+  .figure-card {
+    background: linear-gradient(180deg, #2a1f14 0%, #1a1510 100%);
+    border: 2px solid var(--bronze-dark);
+    border-radius: 16px;
+    padding: 20px 15px 15px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(184,115,51,0.15), inset 0 0 30px rgba(0,0,0,0.3);
+  }
+  .figure-card h3 {
+    color: var(--bronze-glow);
+    font-size: 1.1em;
+    margin-bottom: 12px;
+    letter-spacing: 2px;
+  }
+  .figure-card svg {
+    filter: drop-shadow(0 0 8px rgba(184,115,51,0.2));
+  }
+
+  /* 穴位说明表格 */
+  .point-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+    font-size: 0.9em;
+  }
+  .point-table th {
+    background: rgba(184,115,51,0.15);
+    color: var(--bronze-glow);
+    padding: 10px 14px;
+    text-align: left;
+    border-bottom: 2px solid var(--bronze-dark);
+    font-weight: 600;
+  }
+  .point-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(184,115,51,0.1);
+    color: var(--text2);
+    vertical-align: top;
+  }
+  .point-table tr:hover td {
+    background: rgba(184,115,51,0.05);
+  }
+  .point-tag {
+    display: inline-block;
+    background: var(--bronze);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.85em;
+    font-weight: bold;
+  }
+
+  /* 操作步骤 */
+  .steps {
+    counter-reset: step;
+    list-style: none;
+    padding-left: 0;
+  }
+  .steps li {
+    counter-increment: step;
+    padding: 10px 15px 10px 55px;
+    position: relative;
+    margin-bottom: 8px;
+    background: rgba(184,115,51,0.05);
+    border-radius: 8px;
+  }
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    width: 30px;
+    height: 30px;
+    background: var(--bronze);
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    font-weight: bold;
+    font-size: 0.9em;
+  }
+
+  /* 辨证卡片 */
+  .syndrome-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 15px 0;
+  }
+  .syn-card {
+    background: rgba(184,115,51,0.06);
+    border: 1px solid rgba(184,115,51,0.2);
+    border-radius: 10px;
+    padding: 18px;
+  }
+  .syn-card h4 {
+    color: var(--bronze-light);
+    margin-bottom: 8px;
+    font-size: 1.05em;
+  }
+  .syn-card .formula {
+    color: var(--bronze-glow);
+    font-weight: bold;
+    margin-top: 8px;
+    font-size: 1em;
+  }
+
+  .footer {
+    text-align: center;
+    padding: 30px 20px;
+    color: var(--text2);
+    font-size: 0.85em;
+    border-top: 1px solid rgba(184,115,51,0.15);
+  }
+  .disclaimer {
+    background: rgba(192,57,43,0.1);
+    border: 1px solid rgba(192,57,43,0.3);
+    border-radius: 8px;
+    padding: 15px 20px;
+    margin: 20px 0;
+    color: #e0a0a0;
+    font-size: 0.9em;
+  }
+
+  /* 响应式 */
+  @media (max-width: 768px) {
+    .hero h1 { font-size: 1.6em; }
+    .section { padding: 20px 18px; }
+    .bronze-figures { gap: 20px; }
+    .figure-card svg { width: 260px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <h1>🔥 倪海厦 · 艾灸与隔姜灸</h1>
+  <div class="sub">穴位图解 · 操作方法 · 临床应用</div>
+</div>
+
+<div class="container">
+
+<!-- ============ 一、基本理论 ============ -->
+<div class="section">
+  <h2>一、艾灸基本理论</h2>
+  <p>倪海厦老师认为，<span class="highlight">灸法是补阳气最直接的手段</span>，尤其适合阳虚、寒湿、气滞血瘀等证型。</p>
+  <div class="quote-box">
+    "针刺之不到者，灸之"——灸能透达针达不到的深层寒邪。
+  </div>
+  <p>艾灸的核心机理在于：艾草性温，燃烧后的近红外辐射可深入皮下组织，配合穴位刺激，达到<strong>温经散寒、扶阳固脱、消瘀散结</strong>的效果。倪师特别强调，人体能活着靠的是一口阳气，灸法就是帮人补回这口气。</p>
+</div>
+
+<!-- ============ 二、铜人穴位图 ============ -->
+<div class="section">
+  <h2>二、铜人穴位图解</h2>
+  <p>以下铜人模型标注了倪师艾灸体系中的<strong>核心穴位</strong>，正面为任脉及腿部穴位，背面为督脉及膀胱经俞穴。</p>
+
+  <div class="bronze-figures">
+
+    <!-- ===== 正面铜人 ===== -->
+    <div class="figure-card">
+      <h3>☵ 正面·任脉与腿部</h3>
+      <svg width="300" height="620" viewBox="0 0 300 620" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="bronzeGradF" cx="50%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="#D4A76A"/>
+            <stop offset="40%" stop-color="#B87333"/>
+            <stop offset="75%" stop-color="#8B5E3C"/>
+            <stop offset="100%" stop-color="#5C3A1E"/>
+          </radialGradient>
+          <filter id="glowF">
+            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+          <linearGradient id="meridianLineF" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#D4A76A" stop-opacity="0.6"/>
+            <stop offset="100%" stop-color="#D4A76A" stop-opacity="0.2"/>
+          </linearGradient>
+        </defs>
+
+        <!-- 底座 -->
+        <rect x="110" y="595" width="80" height="14" rx="3" fill="#5C3A1E" stroke="#8B5E3C" stroke-width="1"/>
+        <rect x="100" y="607" width="100" height="8" rx="3" fill="#4A2E14" stroke="#8B5E3C" stroke-width="1"/>
+
+        <!-- 正面人体轮廓 - 铜人风格 -->
+        <!-- 头部 -->
+        <ellipse cx="150" cy="52" rx="30" ry="36" fill="url(#bronzeGradF)" stroke="#8B5E3C" stroke-width="1.5"/>
+        <!-- 头发纹路 -->
+        <path d="M122,38 Q135,28 150,25 Q165,28 178,38" fill="none" stroke="#5C3A1E" stroke-width="0.8" opacity="0.5"/>
+        <!-- 眼 -->
+        <ellipse cx="139" cy="48" rx="5" ry="2.5" fill="#5C3A1E" opacity="0.6"/>
+        <ellipse cx="161" cy="48" rx="5" ry="2.5" fill="#5C3A1E" opacity="0.6"/>
+        <!-- 鼻 -->
+        <line x1="150" y1="48" x2="150" y2="60" stroke="#5C3A1E" stroke-width="1.2" opacity="0.4"/>
+        <!-- 嘴 -->
+        <path d="M142,66 Q150,70 158,66" fill="none" stroke="#5C3A1E" stroke-width="1" opacity="0.4"/>
+        <!-- 耳 -->
+        <path d="M119,42 Q114,52 119,62" fill="none" stroke="#8B5E3C" stroke-width="1.5"/>
+        <path d="M181,42 Q186,52 181,62" fill="none" stroke="#8B5E3C" stroke-width="1.5"/>
+
+        <!-- 颈部 -->
+        <rect x="139" y="88" width="22" height="18" rx="4" fill="url(#bronzeGradF)" stroke="#8B5E3C" stroke-width="1"/>
+
+        <!-- 躯干 -->
+        <path d="M105,106 Q100,106 96,115 L88,160 L86,210 L90,270 L98,320 L105,360 L112,385 Q120,395 138,398 L150,400 L162,398 Q180,395 188,385 L195,360 L202,320 L210,270 L214,210 L212,160 L204,115 Q200,106 195,106 Z" fill="url(#bronzeGradF)" stroke="#8B5E3C" stroke-width="1.5"/>
+
+        <!-- 胸腹中线（任脉虚线） -->
+        <line x1="150" y1="106" x2="150" y2="398" stroke="var(--bronze-glow)" stroke-width="1.2" stroke-dasharray="6,4" opacity="0.5"/>
+
+        <!-- 乳头标记 -->
+        <circle cx="128" cy="145" r="4" fill="#5C3A1E" opacity="0.4"/>
+        <circle cx="172" cy="145" r="4" fill="#5C3A1E" opacity="0.4"/>
+
+        <!-- 肚脐 -->
+        <ellipse cx="150" cy="285" rx="8" ry="6" fill="none" stroke="#5C3A1E" stroke-width="1.5" opacity="0.5"/>
+
+        <!-- 左臂 -->
+        <path d="M96,115 L78,130 L62,175 L55,225 L52,265 L56,278 L64,276 L68,260 L72,215 L80,170 L92,135 L98,120" fill="url(#bronzeGradF)" stroke="#8B5E3C" stroke-width="1.5"/>
+        <!-- 右臂 -->
+        <path d="M204,115 L222,130 L238,175 L245,225 L248,265 L244,278 L236,276 L232,260 L228,215 L220,170 L208,135 L202,120" fill="url(#bronzeGradF)" stroke="#8B5E3C" stroke-width="1.5"/>
+
+        <!-- 手 -->
+        <path d="M52,265 L48,282 Q50,290 56,288 L64,276" fill="url(#bronzeGradF)" stroke="#8B5E3C" stroke-width="1"/>
+        <path d="M248,265 L252,282 Q250,290 244,288 L236,276" fill="url(#bronzeGradF)" stroke="#8B5E3C" stroke-width="1"/>
+
+        <!-- 左腿 -->
+        <path d="M112,385 L108,410 L106,460 L108,510 L112,550 L114,580 L116,593 L124,593 L123,580 L120,550 L118,510 L116,460 L118,410 L138,398" fill="url(#bronzeGradF)" stroke="#8B5E3C" stroke-width="1.5"/>
+        <!-- 右腿 -->
+        <path d="M188,385 L192,410 L194,460 L192,510 L188,550 L186,580 L184,593 L176,593 L177,580 L180,550 L182,510 L184,460 L182,410 L162,398" fill="url(#bronzeGradF)" stroke="#8B5E3C" stroke-width="1.5"/>
+
+        <!-- 脚 -->
+        <path d="M116,593 L114,598 Q112,605 118,607 L124,607 Q128,605 126,598 L124,593" fill="url(#bronzeGradF)" stroke="#8B5E3C" stroke-width="1"/>
+        <path d="M184,593 L182,598 Q180,605 186,607 L192,607 Q196,605 194,598 L192,593" fill="url(#bronzeGradF)" stroke="#8B5E3C" stroke-width="1"/>
+
+        <!-- ========== 穴位标注 ========== -->
+        <!-- 中脘 CV12 -->
+        <circle cx="150" cy="192" r="5" fill="#C0392B" stroke="#fff" stroke-width="1.5" filter="url(#glowF)"/>
+        <line x1="155" y1="192" x2="185" y2="185" stroke="#C0392B" stroke-width="0.8" opacity="0.7"/>
+        <rect x="186" y="175" width="85" height="20" rx="4" fill="rgba(192,57,43,0.85)"/>
+        <text x="228" y="189" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">中脘 CV12</text>
+
+        <!-- 神阙 CV8 (肚脐) -->
+        <circle cx="150" cy="285" r="5" fill="#C0392B" stroke="#fff" stroke-width="1.5" filter="url(#glowF)"/>
+        <line x1="155" y1="285" x2="185" y2="280" stroke="#C0392B" stroke-width="0.8" opacity="0.7"/>
+        <rect x="186" y="270" width="85" height="20" rx="4" fill="rgba(192,57,43,0.85)"/>
+        <text x="228" y="284" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">神阙 CV8</text>
+
+        <!-- 气海 CV6 -->
+        <circle cx="150" cy="310" r="5" fill="#C0392B" stroke="#fff" stroke-width="1.5" filter="url(#glowF)"/>
+        <line x1="155" y1="310" x2="185" y2="308" stroke="#C0392B" stroke-width="0.8" opacity="0.7"/>
+        <rect x="186" y="298" width="78" height="20" rx="4" fill="rgba(192,57,43,0.85)"/>
+        <text x="225" y="312" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">气海 CV6</text>
+
+        <!-- 关元 CV4 -->
+        <circle cx="150" cy="340" r="5" fill="#C0392B" stroke="#fff" stroke-width="1.5" filter="url(#glowF)"/>
+        <line x1="155" y1="340" x2="185" y2="340" stroke="#C0392B" stroke-width="0.8" opacity="0.7"/>
+        <rect x="186" y="330" width="78" height="20" rx="4" fill="rgba(192,57,43,0.85)"/>
+        <text x="225" y="344" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">关元 CV4</text>
+
+        <!-- 天枢 ST25 (左) -->
+        <circle cx="118" cy="283" r="4.5" fill="#E67E22" stroke="#fff" stroke-width="1.2" filter="url(#glowF)"/>
+        <line x1="113" y1="283" x2="85" y2="278" stroke="#E67E22" stroke-width="0.8" opacity="0.7"/>
+        <rect x="22" y="268" width="64" height="20" rx="4" fill="rgba(230,126,34,0.85)"/>
+        <text x="54" y="282" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold" font-family="sans-serif">天枢ST25</text>
+
+        <!-- 天枢 ST25 (右) -->
+        <circle cx="182" cy="283" r="4.5" fill="#E67E22" stroke="#fff" stroke-width="1.2" filter="url(#glowF)"/>
+
+        <!-- 足三里 ST36 (右腿外侧) -->
+        <circle cx="188" cy="480" r="5" fill="#C0392B" stroke="#fff" stroke-width="1.5" filter="url(#glowF)"/>
+        <line x1="193" y1="480" x2="220" y2="475" stroke="#C0392B" stroke-width="0.8" opacity="0.7"/>
+        <rect x="221" y="465" width="75" height="20" rx="4" fill="rgba(192,57,43,0.85)"/>
+        <text x="258" y="479" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold" font-family="sans-serif">足三里ST36</text>
+
+        <!-- 三阴交 SP6 (左腿内侧) -->
+        <circle cx="108" cy="535" r="5" fill="#C0392B" stroke="#fff" stroke-width="1.5" filter="url(#glowF)"/>
+        <line x1="103" y1="535" x2="75" y2="530" stroke="#C0392B" stroke-width="0.8" opacity="0.7"/>
+        <rect x="10" y="520" width="66" height="20" rx="4" fill="rgba(192,57,43,0.85)"/>
+        <text x="43" y="534" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold" font-family="sans-serif">三阴交SP6</text>
+
+        <!-- 膝盖标记(右) -->
+        <ellipse cx="185" cy="440" rx="12" ry="8" fill="none" stroke="#5C3A1E" stroke-width="1" opacity="0.4"/>
+        <!-- 膝盖标记(左) -->
+        <ellipse cx="115" cy="440" rx="12" ry="8" fill="none" stroke="#5C3A1E" stroke-width="1" opacity="0.4"/>
+
+        <!-- 内踝标记(左) -->
+        <ellipse cx="110" cy="580" rx="5" ry="4" fill="none" stroke="#5C3A1E" stroke-width="0.8" opacity="0.4"/>
+
+        <!-- 图例 -->
+        <circle cx="30" cy="35" r="4" fill="#C0392B" stroke="#fff" stroke-width="1"/>
+        <text x="40" y="39" fill="#D4A76A" font-size="10" font-family="sans-serif">核心灸穴</text>
+        <circle cx="30" cy="52" r="4" fill="#E67E22" stroke="#fff" stroke-width="1"/>
+        <text x="40" y="56" fill="#D4A76A" font-size="10" font-family="sans-serif">配伍穴位</text>
+        <line x1="20" y1="68" x2="45" y2="68" stroke="var(--bronze-glow)" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+        <text x="50" y="72" fill="#D4A76A" font-size="10" font-family="sans-serif">任脉</text>
+      </svg>
+    </div>
+
+    <!-- ===== 背面铜人 ===== -->
+    <div class="figure-card">
+      <h3>☲ 背面·督脉与膀胱经</h3>
+      <svg width="300" height="620" viewBox="0 0 300 620" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="bronzeGradB" cx="50%" cy="30%" r="70%">
+            <stop offset="0%" stop-color="#D4A76A"/>
+            <stop offset="40%" stop-color="#B87333"/>
+            <stop offset="75%" stop-color="#8B5E3C"/>
+            <stop offset="100%" stop-color="#5C3A1E"/>
+          </radialGradient>
+          <filter id="glowB">
+            <feGaussianBlur stdDeviation="2.5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+
+        <!-- 底座 -->
+        <rect x="110" y="595" width="80" height="14" rx="3" fill="#5C3A1E" stroke="#8B5E3C" stroke-width="1"/>
+        <rect x="100" y="607" width="100" height="8" rx="3" fill="#4A2E14" stroke="#8B5E3C" stroke-width="1"/>
+
+        <!-- 后脑勺 -->
+        <ellipse cx="150" cy="55" rx="31" ry="35" fill="url(#bronzeGradB)" stroke="#8B5E3C" stroke-width="1.5"/>
+        <!-- 头发纹路 -->
+        <path d="M122,40 Q136,32 150,30 Q164,32 178,40" fill="none" stroke="#5C3A1E" stroke-width="1" opacity="0.5"/>
+        <path d="M126,50 Q138,44 150,42 Q162,44 174,50" fill="none" stroke="#5C3A1E" stroke-width="0.7" opacity="0.4"/>
+        <!-- 耳 -->
+        <path d="M119,48 Q114,58 119,68" fill="none" stroke="#8B5E3C" stroke-width="1.5"/>
+        <path d="M181,48 Q186,58 181,68" fill="none" stroke="#8B5E3C" stroke-width="1.5"/>
+
+        <!-- 颈部 -->
+        <path d="M135,90 L135,106 L165,106 L165,90 Q155,88 150,88 Q145,88 135,90" fill="url(#bronzeGradB)" stroke="#8B5E3C" stroke-width="1"/>
+
+        <!-- 背部躯干 -->
+        <path d="M100,106 Q94,106 90,118 L84,165 L82,220 L86,280 L94,330 L102,370 L110,395 Q118,405 136,408 L150,410 L164,408 Q182,405 190,395 L198,370 L206,330 L214,280 L218,220 L216,165 L210,118 Q206,106 200,106 Z" fill="url(#bronzeGradB)" stroke="#8B5E3C" stroke-width="1.5"/>
+
+        <!-- 脊柱线（督脉虚线） -->
+        <line x1="150" y1="90" x2="150" y2="408" stroke="var(--bronze-glow)" stroke-width="1.5" stroke-dasharray="6,4" opacity="0.5"/>
+
+        <!-- 脊椎节段标记 -->
+        <g opacity="0.35">
+          <!-- C7 -->
+          <rect x="146" y="112" width="8" height="5" rx="1" fill="none" stroke="#D4A76A" stroke-width="0.8"/>
+          <!-- T1 -->
+          <rect x="146" y="122" width="8" height="5" rx="1" fill="none" stroke="#D4A76A" stroke-width="0.8"/>
+          <!-- T3 -->
+          <rect x="146" y="145" width="8" height="5" rx="1" fill="none" stroke="#D4A76A" stroke-width="0.8"/>
+          <!-- T5 -->
+          <rect x="146" y="168" width="8" height="5" rx="1" fill="none" stroke="#D4A76A" stroke-width="0.8"/>
+          <!-- T7 -->
+          <rect x="146" y="191" width="8" height="5" rx="1" fill="none" stroke="#D4A76A" stroke-width="0.8"/>
+          <!-- T9 -->
+          <rect x="146" y="214" width="8" height="5" rx="1" fill="none" stroke="#D4A76A" stroke-width="0.8"/>
+          <!-- T11 脾俞 -->
+          <rect x="146" y="237" width="8" height="5" rx="1" fill="none" stroke="#E67E22" stroke-width="1"/>
+          <!-- L1 -->
+          <rect x="146" y="260" width="8" height="5" rx="1" fill="none" stroke="#D4A76A" stroke-width="0.8"/>
+          <!-- L2 命门/肾俞 -->
+          <rect x="146" y="273" width="8" height="5" rx="1" fill="none" stroke="#C0392B" stroke-width="1.2"/>
+          <!-- L4 -->
+          <rect x="146" y="296" width="8" height="5" rx="1" fill="none" stroke="#D4A76A" stroke-width="0.8"/>
+        </g>
+
+        <!-- 椎体编号 -->
+        <g fill="#8B5E3C" font-size="8" font-family="sans-serif" opacity="0.5">
+          <text x="164" y="117">C7</text>
+          <text x="164" y="127">T1</text>
+          <text x="164" y="150">T3</text>
+          <text x="164" y="173">T5</text>
+          <text x="164" y="196">T7</text>
+          <text x="164" y="219">T9</text>
+          <text x="164" y="242" fill="#E67E22" opacity="0.7">T11</text>
+          <text x="164" y="265">L1</text>
+          <text x="164" y="278" fill="#C0392B" opacity="0.7">L2</text>
+          <text x="164" y="301">L4</text>
+        </g>
+
+        <!-- 肩胛骨 -->
+        <path d="M100,130 Q108,128 118,145 L115,175 Q108,170 100,165 Z" fill="none" stroke="#5C3A1E" stroke-width="1" opacity="0.35"/>
+        <path d="M200,130 Q192,128 182,145 L185,175 Q192,170 200,165 Z" fill="none" stroke="#5C3A1E" stroke-width="1" opacity="0.35"/>
+
+        <!-- 左臂 -->
+        <path d="M90,118 L72,135 L58,180 L52,230 L50,268 L54,280 L62,278 L66,262 L70,218 L78,172 L88,138 L94,122" fill="url(#bronzeGradB)" stroke="#8B5E3C" stroke-width="1.5"/>
+        <!-- 右臂 -->
+        <path d="M210,118 L228,135 L242,180 L248,230 L250,268 L246,280 L238,278 L234,262 L230,218 L222,172 L212,138 L206,122" fill="url(#bronzeGradB)" stroke="#8B5E3C" stroke-width="1.5"/>
+
+        <!-- 手 -->
+        <path d="M50,268 L46,284 Q48,292 54,290 L62,278" fill="url(#bronzeGradB)" stroke="#8B5E3C" stroke-width="1"/>
+        <path d="M250,268 L254,284 Q252,292 246,290 L238,278" fill="url(#bronzeGradB)" stroke="#8B5E3C" stroke-width="1"/>
+
+        <!-- 左腿 -->
+        <path d="M110,395 L106,420 L104,470 L106,520 L110,555 L112,582 L114,593 L122,593 L121,582 L118,555 L116,520 L114,470 L116,420 L136,408" fill="url(#bronzeGradB)" stroke="#8B5E3C" stroke-width="1.5"/>
+        <!-- 右腿 -->
+        <path d="M190,395 L194,420 L196,470 L194,520 L190,555 L188,582 L186,593 L178,593 L179,582 L182,555 L184,520 L186,470 L184,420 L164,408" fill="url(#bronzeGradB)" stroke="#8B5E3C" stroke-width="1.5"/>
+
+        <!-- 脚 -->
+        <path d="M114,593 L112,598 Q110,605 116,607 L122,607 Q126,605 124,598 L122,593" fill="url(#bronzeGradB)" stroke="#8B5E3C" stroke-width="1"/>
+        <path d="M186,593 L184,598 Q182,605 188,607 L194,607 Q198,605 196,598 L194,593" fill="url(#bronzeGradB)" stroke="#8B5E3C" stroke-width="1"/>
+
+        <!-- ========== 穴位标注 ========== -->
+        <!-- 大椎 GV14 -->
+        <circle cx="150" cy="112" r="5" fill="#C0392B" stroke="#fff" stroke-width="1.5" filter="url(#glowB)"/>
+        <line x1="155" y1="112" x2="185" y2="105" stroke="#C0392B" stroke-width="0.8" opacity="0.7"/>
+        <rect x="186" y="95" width="78" height="20" rx="4" fill="rgba(192,57,43,0.85)"/>
+        <text x="225" y="109" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">大椎 GV14</text>
+
+        <!-- 命门 GV4 -->
+        <circle cx="150" cy="275" r="5" fill="#C0392B" stroke="#fff" stroke-width="1.5" filter="url(#glowB)"/>
+        <line x1="155" y1="275" x2="185" y2="272" stroke="#C0392B" stroke-width="0.8" opacity="0.7"/>
+        <rect x="186" y="262" width="78" height="20" rx="4" fill="rgba(192,57,43,0.85)"/>
+        <text x="225" y="276" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">命门 GV4</text>
+
+        <!-- 脾俞 BL20 (左) -->
+        <circle cx="118" cy="239" r="4.5" fill="#E67E22" stroke="#fff" stroke-width="1.2" filter="url(#glowB)"/>
+        <line x1="113" y1="239" x2="82" y2="235" stroke="#E67E22" stroke-width="0.8" opacity="0.7"/>
+        <rect x="18" y="225" width="65" height="20" rx="4" fill="rgba(230,126,34,0.85)"/>
+        <text x="50" y="239" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold" font-family="sans-serif">脾俞BL20</text>
+
+        <!-- 脾俞 BL20 (右) -->
+        <circle cx="182" cy="239" r="4.5" fill="#E67E22" stroke="#fff" stroke-width="1.2" filter="url(#glowB)"/>
+
+        <!-- 1.5寸旁开标注线 (脾俞) -->
+        <line x1="150" y1="239" x2="118" y2="239" stroke="#E67E22" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.5"/>
+        <text x="134" y="249" text-anchor="middle" fill="#E67E22" font-size="8" font-family="sans-serif" opacity="0.7">1.5寸</text>
+
+        <!-- 肾俞 BL23 (左) -->
+        <circle cx="118" cy="275" r="4.5" fill="#C0392B" stroke="#fff" stroke-width="1.2" filter="url(#glowB)"/>
+        <line x1="113" y1="275" x2="82" y2="278" stroke="#C0392B" stroke-width="0.8" opacity="0.7"/>
+        <rect x="18" y="268" width="65" height="20" rx="4" fill="rgba(192,57,43,0.85)"/>
+        <text x="50" y="282" text-anchor="middle" fill="#fff" font-size="10" font-weight="bold" font-family="sans-serif">肾俞BL23</text>
+
+        <!-- 肾俞 BL23 (右) -->
+        <circle cx="182" cy="275" r="4.5" fill="#C0392B" stroke="#fff" stroke-width="1.2" filter="url(#glowB)"/>
+
+        <!-- 1.5寸旁开标注线 (肾俞) -->
+        <line x1="150" y1="275" x2="118" y2="275" stroke="#C0392B" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.5"/>
+        <text x="134" y="285" text-anchor="middle" fill="#C0392B" font-size="8" font-family="sans-serif" opacity="0.7">1.5寸</text>
+
+        <!-- 命门与肾俞同水平线标注 -->
+        <line x1="112" y1="275" x2="188" y2="275" stroke="#C0392B" stroke-width="0.6" stroke-dasharray="2,2" opacity="0.4"/>
+
+        <!-- 图例 -->
+        <circle cx="30" cy="35" r="4" fill="#C0392B" stroke="#fff" stroke-width="1"/>
+        <text x="40" y="39" fill="#D4A76A" font-size="10" font-family="sans-serif">核心灸穴</text>
+        <circle cx="30" cy="52" r="4" fill="#E67E22" stroke="#fff" stroke-width="1"/>
+        <text x="40" y="56" fill="#D4A76A" font-size="10" font-family="sans-serif">配伍穴位</text>
+        <line x1="20" y1="68" x2="45" y2="68" stroke="var(--bronze-glow)" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+        <text x="50" y="72" fill="#D4A76A" font-size="10" font-family="sans-serif">督脉</text>
+        <rect x="20" y="80" width="10" height="5" rx="1" fill="none" stroke="#D4A76A" stroke-width="0.8" opacity="0.5"/>
+        <text x="36" y="88" fill="#D4A76A" font-size="10" font-family="sans-serif">椎体</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- 穴位定位详表 -->
+  <h3>📌 穴位快速定位指南</h3>
+  <table class="point-table">
+    <thead>
+      <tr><th>穴位</th><th>归属</th><th>定位方法</th><th>艾灸功效</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="point-tag">中脘 CV12</span></td>
+        <td>任脉</td>
+        <td>肚脐上方，脐至胸骨剑突连线中点</td>
+        <td>健脾和胃、降逆止呕，胃病首穴</td>
+      </tr>
+      <tr>
+        <td><span class="point-tag">神阙 CV8</span></td>
+        <td>任脉</td>
+        <td>肚脐正中（隔盐灸为主）</td>
+        <td>温阳救逆、利水固脱，急救要穴</td>
+      </tr>
+      <tr>
+        <td><span class="point-tag">气海 CV6</span></td>
+        <td>任脉</td>
+        <td>肚脐下方两横指（约1.5寸）</td>
+        <td>补气固本、温下焦，气虚首选</td>
+      </tr>
+      <tr>
+        <td><span class="point-tag">关元 CV4</span></td>
+        <td>任脉</td>
+        <td>肚脐下方四横指（约3寸）</td>
+        <td>培元固本、补下焦，"关元一灸如服人参"</td>
+      </tr>
+      <tr>
+        <td><span class="point-tag">天枢 ST25</span></td>
+        <td>胃经</td>
+        <td>肚脐旁开三横指（约2寸），左右各一</td>
+        <td>调理肠腑、理气消滞，腹泻便秘双向调节</td>
+      </tr>
+      <tr>
+        <td><span class="point-tag">足三里 ST36</span></td>
+        <td>胃经</td>
+        <td>膝盖髌骨下外侧凹陷往下四横指，胫骨外一横指</td>
+        <td>补脾健胃、增强免疫，"长寿灸"</td>
+      </tr>
+      <tr>
+        <td><span class="point-tag">三阴交 SP6</span></td>
+        <td>脾经</td>
+        <td>内踝骨最高点上方四横指，胫骨后缘</td>
+        <td>健脾益血、调肝补肾，妇科要穴</td>
+      </tr>
+      <tr>
+        <td><span class="point-tag">大椎 GV14</span></td>
+        <td>督脉</td>
+        <td>低头，颈后最突出骨头正下方凹陷</td>
+        <td>解表退热、通阳散寒，感冒发烧首选</td>
+      </tr>
+      <tr>
+        <td><span class="point-tag">命门 GV4</span></td>
+        <td>督脉</td>
+        <td>与肚脐正对的后背脊椎正中（L2）</td>
+        <td>补肾壮阳、温脾止泻，肾阳虚必灸</td>
+      </tr>
+      <tr>
+        <td><span class="point-tag">肾俞 BL23</span></td>
+        <td>膀胱经</td>
+        <td>命门旁开食中两指（1.5寸），与命门同高</td>
+        <td>益肾固精、温补肾阳，与命门黄金搭档</td>
+      </tr>
+      <tr>
+        <td><span class="point-tag">脾俞 BL20</span></td>
+        <td>膀胱经</td>
+        <td>命门往上3个椎体（T11），旁开1.5寸</td>
+        <td>健脾利湿、和胃消食，脾虚湿重核心穴</td>
+      </tr>
+    </tbody>
+  </table>
+  <p style="font-size:0.85em; color:var(--text2); margin-top:8px;">💡 <strong>同身寸</strong>：量穴位时用自己的手指——食中两指并拢为1.5寸，四横指为3寸，因为手指宽度与身体比例匹配，无需换算。</p>
+</div>
+
+<!-- ============ 三、隔姜灸操作 ============ -->
+<div class="section">
+  <h2>三、隔姜灸操作方法</h2>
+  <p>倪师最推崇<span class="highlight">隔姜灸</span>，生姜辛温可温经散寒，与艾火协同深透寒湿之邪。</p>
+
+  <ol class="steps">
+    <li><strong>选材</strong>：新鲜老姜（生姜），切成约 0.3–0.5 cm 厚的薄片，用针在姜片上扎数个小孔，以利热力下透</li>
+    <li><strong>艾炷</strong>：取纯艾绒制成圆锥形艾炷，底径约 1–1.5 cm，高约 1.5 cm</li>
+    <li><strong>操作</strong>：姜片置于穴位上，艾炷放姜片顶端点燃；患者感灼热时可上移姜片，勿至起泡（除特殊需要）</li>
+    <li><strong>壮数</strong>：一般每穴 3–7 壮，重症阳虚者可多至 9–15 壮</li>
+    <li><strong>频率</strong>：每日或隔日一次，疗程 7–14 次为一疗程</li>
+  </ol>
+
+  <h3>隔姜灸示意图</h3>
+  <div style="text-align:center; margin:20px 0;">
+    <svg width="500" height="220" viewBox="0 0 500 220" xmlns="http://www.w3.org/2000/svg" style="max-width:100%;">
+      <defs>
+        <linearGradient id="skinGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#F5D5B8"/>
+          <stop offset="100%" stop-color="#E8C4A0"/>
+        </linearGradient>
+        <linearGradient id="moxaGrad" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#5A4A3A"/>
+          <stop offset="30%" stop-color="#8B7355"/>
+          <stop offset="100%" stop-color="#6B5B4B"/>
+        </linearGradient>
+        <linearGradient id="fireGrad" x1="0" y1="1" x2="0" y2="0">
+          <stop offset="0%" stop-color="#FF6600"/>
+          <stop offset="50%" stop-color="#FF3300"/>
+          <stop offset="100%" stop-color="#FFCC00"/>
+        </linearGradient>
+        <filter id="smokeBlur">
+          <feGaussianBlur stdDeviation="3"/>
+        </filter>
+      </defs>
+
+      <!-- 皮肤层 -->
+      <rect x="60" y="150" width="380" height="60" rx="5" fill="url(#skinGrad)" stroke="#D4A76A" stroke-width="1"/>
+      <text x="250" y="185" text-anchor="middle" fill="#8B5E3C" font-size="13" font-family="sans-serif">皮肤 / 穴位</text>
+
+      <!-- 姜片 -->
+      <rect x="140" y="125" width="220" height="25" rx="8" fill="#7CB342" stroke="#558B2F" stroke-width="1.5"/>
+      <text x="250" y="142" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold" font-family="sans-serif">生 姜 片（0.3-0.5cm，扎孔）</text>
+      <!-- 姜片小孔 -->
+      <circle cx="170" cy="137" r="2" fill="#558B2F" opacity="0.6"/>
+      <circle cx="200" cy="137" r="2" fill="#558B2F" opacity="0.6"/>
+      <circle cx="230" cy="137" r="2" fill="#558B2F" opacity="0.6"/>
+      <circle cx="260" cy="137" r="2" fill="#558B2F" opacity="0.6"/>
+      <circle cx="290" cy="137" r="2" fill="#558B2F" opacity="0.6"/>
+      <circle cx="320" cy="137" r="2" fill="#558B2F" opacity="0.6"/>
+
+      <!-- 艾炷 -->
+      <path d="M200,60 L200,125 L300,125 L300,60 Q250,30 200,60 Z" fill="url(#moxaGrad)" stroke="#5C3A1E" stroke-width="1.5"/>
+      <text x="250" y="100" text-anchor="middle" fill="#D4A76A" font-size="11" font-weight="bold" font-family="sans-serif">艾 炷</text>
+
+      <!-- 火焰 -->
+      <ellipse cx="250" cy="48" rx="18" ry="22" fill="url(#fireGrad)" opacity="0.85">
+        <animate attributeName="ry" values="22;18;22" dur="0.8s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.85;0.7;0.85" dur="0.6s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="250" cy="50" rx="8" ry="10" fill="#FFEE88" opacity="0.6">
+        <animate attributeName="ry" values="10;7;10" dur="0.5s" repeatCount="indefinite"/>
+      </ellipse>
+
+      <!-- 烟 -->
+      <g filter="url(#smokeBlur)" opacity="0.25">
+        <circle cx="240" cy="20" r="8" fill="#999">
+          <animate attributeName="cy" values="20;5;20" dur="2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.25;0;0.25" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="260" cy="15" r="6" fill="#999">
+          <animate attributeName="cy" values="15;0;15" dur="2.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.2;0;0.2" dur="2.5s" repeatCount="indefinite"/>
+        </circle>
+      </g>
+
+      <!-- 热力穿透箭头 -->
+      <g opacity="0.5">
+        <line x1="230" y1="155" x2="230" y2="200" stroke="#C0392B" stroke-width="2" marker-end="url(#arrowRed)"/>
+        <line x1="250" y1="155" x2="250" y2="205" stroke="#C0392B" stroke-width="2.5"/>
+        <line x1="270" y1="155" x2="270" y2="200" stroke="#C0392B" stroke-width="2"/>
+      </g>
+      <defs>
+        <marker id="arrowRed" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+          <path d="M0,0 L6,3 L0,6 Z" fill="#C0392B"/>
+        </marker>
+      </defs>
+      <text x="310" y="182" fill="#C0392B" font-size="10" font-family="sans-serif" opacity="0.8">热力透入↓</text>
+
+      <!-- 标注线 -->
+      <line x1="60" y1="125" x2="135" y2="125" stroke="#8B5E3C" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <text x="60" y="122" fill="#8B5E3C" font-size="9" font-family="sans-serif">←姜片层</text>
+      <line x1="60" y1="150" x2="135" y2="150" stroke="#8B5E3C" stroke-width="0.8" stroke-dasharray="3,2"/>
+      <text x="60" y="147" fill="#8B5E3C" font-size="9" font-family="sans-serif">←皮肤层</text>
+    </svg>
+  </div>
+</div>
+
+<!-- ============ 四、灸法原则与经验 ============ -->
+<div class="section">
+  <h2>四、灸法重要原则与经验</h2>
+
+  <h3>🕐 灸法的时机选择</h3>
+  <ul>
+    <li><strong>三伏天</strong>（夏至后第3个庚日）：倪师非常重视三伏灸，此时阳气最旺，艾灸可"乘旺引热"，将寒邪彻底逐出</li>
+    <li><strong>子午流注</strong>：一般避开正午，早晨 7–11 点（辰、巳时）灸背部俞穴；下午灸腹部任脉穴位效果更佳</li>
+  </ul>
+
+  <h3>⭐ 倪师特别强调的穴位</h3>
+  <table class="point-table">
+    <thead><tr><th>穴位</th><th>倪师特别说明</th></tr></thead>
+    <tbody>
+      <tr><td><span class="point-tag">足三里</span></td><td>"长寿灸"，体弱者坚持灸可媲美人参，增强免疫</td></tr>
+      <tr><td><span class="point-tag">关元</span></td><td>补元气首选，倪师称"关元一灸，如服人参"，尤其适合大病后调养</td></tr>
+      <tr><td><span class="point-tag">神阙</span></td><td>倪师常用<strong>隔盐灸</strong>（非隔姜），适合急救阳脱、腹中寒痛</td></tr>
+      <tr><td><span class="point-tag">命门</span></td><td>督脉之要，与肾俞配合，是补肾阳的黄金搭档</td></tr>
+    </tbody>
+  </table>
+
+  <h3>🩺 灸后调养</h3>
+  <ol class="steps">
+    <li><strong>灸后勿冷水浴</strong>，至少2小时后方可洗澡，且用温水</li>
+    <li><strong>补充温热饮食</strong>：灸后喝温姜糖水，助阳气散达</li>
+    <li><strong>灸疮（起泡）</strong>：倪师认为化脓灸（直接灸至起泡）效力最强，但需配合消毒护理；隔姜灸一般不起泡</li>
+    <li><strong>忌灸人群</strong>：阴虚火旺（舌红无苔、口干咽燥）、实热证、发烧期间，均不宜艾灸</li>
+  </ol>
+</div>
+
+<!-- ============ 五、六经辨证灸法 ============ -->
+<div class="section">
+  <h2>五、艾灸与伤寒论六经辨证</h2>
+  <p>倪师强调灸法要与六经辨证结合，不同经病选用不同穴位组合：</p>
+
+  <div class="syndrome-cards">
+    <div class="syn-card">
+      <h4>🌊 太阴病（脾虚寒湿）</h4>
+      <p>症状：腹满而吐、食不下、自利、时腹自痛</p>
+      <div class="formula">中脘 + 足三里 + 天枢</div>
+      <p style="font-size:0.85em; color:var(--text2); margin-top:5px;">温中散寒，健运脾胃</p>
+    </div>
+    <div class="syn-card">
+      <h4>❄️ 少阴病（肾阳虚衰）</h4>
+      <p>症状：但欲寐、手足厥冷、下利清谷、脉微</p>
+      <div class="formula">关元 + 命门 + 肾俞（重灸）</div>
+      <p style="font-size:0.85em; color:var(--text2); margin-top:5px;">回阳救逆，温补肾阳</p>
+    </div>
+    <div class="syn-card">
+      <h4>🧊 厥阴病（手足厥冷、脉微）</h4>
+      <p>症状：手足厥寒、脉细欲绝、寒热错杂</p>
+      <div class="formula">关元灸至脉回为度（急救）</div>
+      <p style="font-size:0.85em; color:var(--text2); margin-top:5px;">破阴回阳，急救回脉</p>
+    </div>
+  </div>
+
+  <div class="quote-box">
+    "人能活着，靠的是一口阳气。灸，就是帮你补回这口气。" —— 倪海厦（意译）
+  </div>
+</div>
+
+<!-- ============ 免责声明 ============ -->
+<div class="disclaimer">
+  ⚠️ <strong>免责声明</strong>：以上内容综合自倪海厦老师人纪针灸、伤寒论、金匮要略等讲座体系，仅作学习研究参考。<strong>具体调理请在执业中医师指导下进行</strong>，切勿自行施灸延误病情。孕妇、阴虚火旺者及实热证患者不宜艾灸。
+</div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  倪海厦·艾灸与隔姜灸 — 穴位图解与使用指南 | 仅供学习参考
+</div>
+
+</body>
+</html>
